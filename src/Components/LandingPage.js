@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+//import { Link } from 'react-router-dom';
+import emojihash from 'web3-emojihash';
 import axios from 'axios';
-import twemoji from 'twemoji';
 import 'bulma/css/bulma.css';
 
 export default class LandingPage extends Component {
@@ -54,11 +55,25 @@ export default class LandingPage extends Component {
                 MimojiHash
               </p>
               <div className="container is-centered" style={styles.containers}>
-                <a class="button is-rounded is-primary is-inverted" style={styles.buttons}>Encrypt</a>
-                <a class="button is-rounded is-danger is-inverted" style={styles.buttons}>Decrypt</a>
+                <button
+                  className="button is-rounded is-primary is-inverted"
+                  style={styles.buttons}
+                  onClick={() => console.log(emojihash('test'))}
+                >
+                Encrypt
+                </button>
+
+                <button
+                  className="button is-rounded is-danger is-inverted"
+                  style={styles.buttons}
+                  onClick={() => console.log(emojihash('tester'))}
+                >
+                Decrypt
+                </button>
+
               </div>
               <br />
-              <p class="subtitle">An experiment in general key recovery.</p>
+              <p className="subtitle">An experiment in general key recovery.</p>
               <p className="subtitle">
               <span className="icon">
                 <i className="far fa-dizzy"></i>
@@ -77,14 +92,14 @@ export default class LandingPage extends Component {
           </div>
 
           <div>
-          <article class="tile is-child notification is-warning" style={styles.articles}>
-            <p class="subtitle">The MimojiHashing protocol requires you to login into your Web3 object (eg Metamask) in order to access the functionality.</p>
+          <article className="tile is-child notification is-warning" style={styles.articles}>
+            <p className="subtitle">The MimojiHashing protocol requires you to login into your Web3 object (eg Metamask) in order to access the functionality.</p>
           </article>
-          <article class="tile is-child notification is-warning" style={styles.articles}>
-            <p class="subtitle">Encrypt: The encryption algorithm will take in your pubKey and Mimo name returning an emoji string representing your unique hash.</p>
+          <article className="tile is-child notification is-warning" style={styles.articles}>
+            <p className="subtitle">Encrypt: The encryption algorithm will take in your pubKey and Mimo name returning an emoji string representing your unique hash.</p>
           </article>
-          <article class="tile is-child notification is-warning" style={styles.articles}>
-            <p class="subtitle">Decrypt: The decryption algorithm will take in your MimojiHash as well as your Mimo name to return your pubKey.</p>
+          <article className="tile is-child notification is-warning" style={styles.articles}>
+            <p className="subtitle">Decrypt: The decryption algorithm will take in your MimojiHash as well as your Mimo name to return your pubKey.</p>
           </article>
           </div>
 
