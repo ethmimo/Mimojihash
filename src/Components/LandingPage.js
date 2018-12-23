@@ -10,6 +10,13 @@ export default class LandingPage extends Component {
         display: 'inline-block',
         border: '1px solid black',
         width: '30%',
+      },
+      buttons: {
+        margin: '5%',
+      },
+      containers: {
+        width: '25%',
+        height: '5.0rem',
       }
     }
     return(
@@ -27,10 +34,6 @@ export default class LandingPage extends Component {
 
               <div id="navbarMenuHeroB" className="navbar-menu">
               <div className="navbar-end">
-                <a className="navbar-item">Home</a>
-                <a className="navbar-item">Encrypt</a>
-                <a className="navbar-item">Decrypt</a>
-
                 <span className="navbar-item">
                   <a className="button is-info is-inverted" href="https://github.com/ethmimo/research/tree/master/protocol">
                     <span className="icon">
@@ -50,6 +53,10 @@ export default class LandingPage extends Component {
               <p className="title">
                 MimojiHash
               </p>
+              <div className="container is-centered" style={styles.containers}>
+                <a class="button is-rounded is-primary is-inverted" style={styles.buttons}>Encrypt</a>
+                <a class="button is-rounded is-danger is-inverted" style={styles.buttons}>Decrypt</a>
+              </div>
               <br />
               <p class="subtitle">An experiment in general key recovery.</p>
               <p className="subtitle">
